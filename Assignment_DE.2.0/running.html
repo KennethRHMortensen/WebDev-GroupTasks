@@ -5,20 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Running tracker</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="./js/TrackRun.js"></script>
 </head>
 <body>
-    <h1>Demoing Aspects of Forms</h1>
-    <form id='formalisme' action='#' method='post'>
-        <p>
-            Indtast en tæller:<br/>
-            <input id='it1' name='t1' type='text'/>
-        </p>
-        <p>
-            <input type='submit' value='Go!'/>
-        </p>
-    </form>
-    <article>
-        <p id='res'></p>
-    </article>
+    <main>
+        <h1>Calculate your running pace</h1>
+        <form id='t2tpkm' action='#' method='post'>
+            <p>
+                Insert the distance you ran<br/>
+                <input id='km' name='km' type='text' placeholder="kilometers"/>
+            </p>
+            <p>
+                Insert your time for the run<br/>
+                <input id='hour' name='time' type='text' placeholder="hours"/>
+                <input id='minute' name='time' type='text' placeholder="minutes"/>
+                <input id='second' name='time' type='text' placeholder="seconds"/>
+            </p>
+            <p>
+                <input type='submit' value='Go!'/>
+            </p>
+        </form>
+        <div class="results">
+            <h2>Your running pace for the run were</h2>
+            <div id="hours" class="pace"></div>
+            <div id="minutes" class="pace"></div>
+            <div id="seconds" class="pace"></div>
+            <p>per kilometer</p>
+        </div>
+    </main>
 </body>
 </html>
