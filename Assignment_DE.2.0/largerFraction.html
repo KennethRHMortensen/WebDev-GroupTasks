@@ -4,24 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Larger Fraction</title>
+    <title>Larger Fraction Calculator</title>
+    <script defer src="js/LargerFraction.js"></script>
 </head>
 <body>
 
     <h1>Larger Fraction Calculator</h1>
-    <p>Enter two fractions, a numerator and a denominator. The page will return which of the fractions is larger, and by how much.</p>
+    <p>Enter two fractions, a numerator and a denominator. The page will return which fraction is larger, and by how much.</p>
 
-    <form action="#" method="POST">
+    <form id="fractionsForm" action="#" method="POST">
 
-        <label>Numerator:</label>
-        <input id="numerator" type="number">
+        <div id="firstFraction">
+            <label>Numerator:</label>
+            <input type="number" id="firstNumerator">
 
-        <label>Denominator:</label>
-        <input id="denominator" type="number">
+            <label>Denominator:</label>
+            <input type="number" id="firstDenominator">
+        </div>
 
-        <input type="submit" value="Submit"/>
+        <div id="secondFraction">
+            <label>Numerator:</label>
+            <input type="number" id="secondNumerator">
+
+            <label>Denominator:</label>
+            <input type="number" id="secondDenominator">
+        </div>
+
+        <input type="submit" value="Submit">
 
     </form>
+
+    <p id="result"></p>
+    <p id="differnce"></p>
 
 </body>
 </html>
