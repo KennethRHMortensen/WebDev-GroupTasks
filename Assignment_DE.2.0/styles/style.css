@@ -28,13 +28,8 @@ header nav ul li {
 }
 
 header nav ul li a {
-  color: red;
+  color: black;
   font-size: 2em;
   text-transform: uppercase;
-}
-
-header nav ul {
-  background-color: green;
-  height: 100%;  
 }
 /*# sourceMappingURL=style.css.map */
