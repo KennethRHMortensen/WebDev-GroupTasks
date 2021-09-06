@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduced Fraction Calculator</title>
+    <script defer src="js/ReducedFraction.js"></script>
+</head>
+<body>
+
+    <h1>Reduced Fraction Calculator</h1>
+    <p>Enter two fractions, a numerator and a denominator. The page will return the reduced fraction.</p>
+
+    <form id="fractionsForm" action="#" method="POST">
+
+        <div id="firstFraction">
+            <label>Numerator:</label>
+            <input type="number" id="firstNumerator">
+
+            <label>Denominator:</label>
+            <input type="number" id="firstDenominator">
+        </div>
+
+        <div id="secondFraction">
+            <label>Numerator:</label>
+            <input type="number" id="secondNumerator">
+
+            <label>Denominator:</label>
+            <input type="number" id="secondDenominator">
+        </div>
+
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <p id="firstFractionResult"></p>
+    <p id="secondFractionResult"></p>
+
+</body>
+</html>
