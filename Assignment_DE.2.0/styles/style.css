@@ -21,6 +21,11 @@ header nav {
   height: 100%;
 }
 
+header nav ul {
+  background-color: green;
+  height: 100%;
+}
+
 header nav ul li {
   display: inline-block;
   list-style-type: none;
