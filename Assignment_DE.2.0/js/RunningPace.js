@@ -5,59 +5,40 @@ const $ = function (foo) {
     return document.getElementById(foo);
 };
 
-// aliases
+// alias
 const paceForm = $('paceForm');
 
-
 // converting function to find running pace pr. km
-const convert = function (e) {
+function convert(e) {
     
-    const km = $('km').value;
-    const hour = $('hour').value;
-    const min = $('minute').value;
-    const sec = $('second').value;
-    // convert total running time to seconds
-    const totalTime = sec+(min*60)+(hour*3600);
-    console.log('the total time in sec is', totalTime);
-/*
-    // convert total time in seconds to total time in seconds pr. km 
-    const paceSec = totalTime/km;
-    console.log("the total time pr, km. in sec is " paceSec);
-
-    // convert seconds pr. km. to hours, then substract the remaining minutes and seconds from this to another index
-    
-    const paceHh = paceSec/3600;
-    console.log("the total time pr. km. in hours is " paceHh);
-    */
-    // convert the remains to minutes and place the result in another index
-    /*
-    let paceMm = (paceHh-)
-    console.log(paceHh);
-    
-    // convert the remains to seconds and place the result in the last index
-    
-    // convert time pr. km to hh:mm:ss
-    let pace = arr[        
-        paceHh,
-     
-        {"id": h, 
-        "time": (paceSec/60)/60)},
-        {"id": m,
-        "time": ()}
-        */
-    
-/*
-    let arr = s.split(':');
-    let h = arr[0];
-    let m = arr[1];
-    let s = arr[2];
-*/  
-    $('hours').innerHTML = paceSec;
-    /*$('minutes').innerHTML = m;
-    $('seconds').innerHTML = s;
-    */
+    // prevent the default behavior of a form 
     e.preventDefault();
-    return false;
+    
+    const km = $('km').value -0;
+    const hour = $('hour').value -0;
+    const min = $('minute').value -0;
+    const sec = $('second').value -0;
+
+    // calculate total running time in seconds
+    const totalSec = sec + (min * 60) + (hour * 3600);
+    console.log('the total time in sec is', totalSec);
+
+    // convert total time pr. km to seconds
+    let paceSec = totalSec / km;
+    console.log("total time pr. km. in seconds is ", paceSec);
+
+    // create object with identifiers and values of hours, minutes and seconds
+    let resultObj = {};
+    resultObj.hours = Math.floor(paceSec / 3600); // time pr. km. in hours
+    paceSec = paceSec % 3600; // re-assign paceSec value with the remainders of time pr. km. in hours
+    resultObj.minutes = Math.floor(paceSec / 60); // time pr. km. in minutes from the remainders 
+    paceSec = paceSec % 60; // re-assign paceSec value with the remainders of time pr. km. in minutes
+    resultObj.seconds = Math.round(paceSec); // time pr. km. in seconds from the remainders
+
+    // print the objects values in hh:mm:ss format in html 
+    $('runningpace').innerHTML = resultObj.hours + 't:' + resultObj.minutes + 'm:' + resultObj.seconds + 's';
+
 };
 
+// run function on submit of form
 paceForm.addEventListener('submit', convert);

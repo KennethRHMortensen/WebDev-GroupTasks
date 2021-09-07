@@ -12,19 +12,19 @@
     <main>
         <h1>Calculate your running pace</h1>
         
-        <form id='paceForm' action='#' method='POST'>
+        <form id="paceForm" action="#" method="POST">
             
             <div id="distance">
                 <p>Insert the distance you ran</p> 
-                <input id='km' name='km' type='text' placeholder="kilometers"/>
+                <input id='km' name='km' type='number' step="0.1" value="10" placeholder="kilometers"/>
             </div>
         
             <div id="time">
                 <p>Insert your time for the run</p>
 
-                <input id='hour' name='time' type='text' placeholder="hours"/>
-                <input id='minute' name='time' type='text' placeholder="minutes"/>
-                <input id='second' name='time' type='text' placeholder="seconds"/>
+                <input id='hour' name='time' type='number' value="1" placeholder="hours" min="0"/>
+                <input id='minute' name='time' type='number' value="54" placeholder="minutes" length="2" max="59" min="0"/>
+                <input id='second' name='time' type='number' value="25" placeholder="seconds" length="2" max="59" min="0"/>
 
             </div>
                 
@@ -35,9 +35,8 @@
         <div class="results">
             <h2>Your running pace for the run were</h2>
 
-            <div id="hours" class="pace"></div>
-            <div id="minutes" class="pace"></div>
-            <div id="seconds" class="pace"></div>
+            <div id="runningpace"></div>
+            
             
             <p>per kilometer</p>
         </div>
