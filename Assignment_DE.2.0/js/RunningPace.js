@@ -5,33 +5,39 @@ const $ = function (foo) {
     return document.getElementById(foo);
 };
 
-let km = $('km').value;
-let hour = $('hour').value;
-let min = $('minute').value;
-let sec = $('second').value;
+// aliases
+const paceForm = $('paceForm');
+
 
 // converting function to find running pace pr. km
 const convert = function (e) {
     
+    const km = $('km').value;
+    const hour = $('hour').value;
+    const min = $('minute').value;
+    const sec = $('second').value;
     // convert total running time to seconds
-    let totalTime = sec+(min*60)+(hour*3600);
-    console.log(km/totalTime);
-
+    const totalTime = sec+(min*60)+(hour*3600);
+    console.log('the total time in sec is', totalTime);
+/*
     // convert total time in seconds to total time in seconds pr. km 
-    let paceSec = km/totTime;
-    // convert time pr. km. from seconds to hours, then substract the remaining minutes and seconds from this to another index
-    let paceHh = (paceSec/60)/60;
-    console.log(paceHh);
+    const paceSec = totalTime/km;
+    console.log("the total time pr, km. in sec is " paceSec);
+
+    // convert seconds pr. km. to hours, then substract the remaining minutes and seconds from this to another index
+    
+    const paceHh = paceSec/3600;
+    console.log("the total time pr. km. in hours is " paceHh);
+    */
     // convert the remains to minutes and place the result in another index
     /*
     let paceMm = (paceHh-)
     console.log(paceHh);
+    
     // convert the remains to seconds and place the result in the last index
-
-
+    
     // convert time pr. km to hh:mm:ss
-    let pace = arr[
-        
+    let pace = arr[        
         paceHh,
      
         {"id": h, 
@@ -39,10 +45,6 @@ const convert = function (e) {
         {"id": m,
         "time": ()}
         */
- 
-
-    // create array of hh:mm:ss
-   
     
 /*
     let arr = s.split(':');
@@ -57,7 +59,5 @@ const convert = function (e) {
     e.preventDefault();
     return false;
 };
-const init = function () {
-    $('t2tpkm').addEventListener('submit', convert);
-};
-window.addEventListener('load', init);
+
+paceForm.addEventListener('submit', convert);
